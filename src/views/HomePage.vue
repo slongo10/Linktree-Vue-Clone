@@ -7,6 +7,29 @@ const profile = ref({
   slogan: 'Full Time Student and Father',
   avatar:
     'https://api.dicebear.com/10.x/adventurer-neutral/svg?eyesVariant=variant01,variant02,variant03,variant05,variant06,variant07,variant08,variant09,variant10,variant11,variant12,variant13,variant14,variant15,variant16,variant17,variant18,variant19,variant20,variant21,variant22,variant23,variant24,variant25,variant26&mouthVariant=variant01,variant02,variant03,variant04,variant05,variant06,variant07,variant08,variant09,variant11,variant12,variant13,variant14,variant15,variant16,variant17,variant18,variant19,variant20,variant21,variant22,variant23,variant24,variant25,variant26,variant27,variant28,variant29,variant30&backgroundColor=763900,ecad80,9e5622&lipsColor=&seed=Felix',
+  links: [
+    {
+      id: 1,
+      title: 'Github',
+      url: 'https://github.com/slongo10/',
+      icon: 'code',
+      description: 'Check out my projects',
+    },
+    {
+      id: 2,
+      title: 'Linkedin',
+      url: 'https://www.linkedin.com/in/sabstian-longoria-567019174/',
+      icon: 'briefcase',
+      description: 'Connect with me Professionally',
+    },
+    {
+      id: 3,
+      title: 'Expenses-Splitter',
+      url: 'https://github.com/slongo10/expense-splitter-vue',
+      icon: 'calculator',
+      description: 'Split the bill',
+    },
+  ],
 })
 </script>
 
@@ -32,8 +55,12 @@ const profile = ref({
     <!-- Link List-->
     <div class="flex w-full max-w-md flex-col gap-4">
       <LinkCard
-        v-for="x of [1, 2, 3]"
-        :key="x"
+        v-for="link in profile.links"
+        :key="link.id"
+        :title="link.title"
+        :url="link.url"
+        :description="link.description"
+        :icon="link.icon"
       />
     </div>
 
